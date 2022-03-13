@@ -1,0 +1,31 @@
+2022-03-13 14:07:13,158 -Report_logger-[INFO] -Started Test Execution
+2022-03-13 14:07:13,158 -Report_logger-[INFO] -Testcase name test_001:
+2022-03-13 14:07:13,205 -Report_logger-[INFO] -End point URL is :http://restapi.adequateshop.com/api/authaccount/registration
+2022-03-13 14:07:13,205 -Report_logger-[INFO] -Header is :{'Content-type': 'application/json', 'Accept': '*/*'}
+2022-03-13 14:07:13,205 -Report_logger-[INFO] -Post body is :{'name': 'tmhugjmyzvshbocapkq', 'email': 'Pasordtest02@gmail.comzvntcyblrmjyqcpxf', 'password': 'Password02'}
+2022-03-13 14:07:13,595 -Report_logger-[INFO] -Success : Successfully Verified Response from API is <Response [200]>
+2022-03-13 14:07:13,618 -Report_logger-[INFO] -Success : Passed : Successfully Registered user
+2022-03-13 14:07:13,619 -Report_logger-[INFO] -Success : Response from APi : {'code': 0, 'message': 'success', 'data': {'Id': 24734, 'Name': 'tmhugjmyzvshbocapkq', 'Email': 'Pasordtest02@gmail.comzvntcyblrmjyqcpxf', 'Token': 'eb9f0a91-a560-4858-9526-ec626dab27b6'}}
+2022-03-13 14:07:13,636 -Report_logger-[INFO] -Completed Test Execution 
+2022-03-13 14:07:13,637 -Report_logger-[INFO] -.......................................................................
+2022-03-13 14:07:13,639 -Report_logger-[INFO] -Started Test Execution
+2022-03-13 14:07:13,640 -Report_logger-[INFO] -Test case Execution Started for test_002_DependentOntest_001
+2022-03-13 14:07:13,646 -Report_logger-[INFO] -End point URL is :http://restapi.adequateshop.com/api/authaccount/login
+2022-03-13 14:07:13,646 -Report_logger-[INFO] -Header is :{'Content-type': 'application/json', 'Accept': '*/*'}
+2022-03-13 14:07:13,646 -Report_logger-[INFO] -Post body is :{'email': 'Pasordtest02@gmail.comzvntcyblrmjyqcpxf', 'password': 'Password02'}
+2022-03-13 14:07:14,039 -Report_logger-[INFO] -Success : Successfully Verified Response from API is <Response [200]>
+2022-03-13 14:07:14,039 -Report_logger-[INFO] -Success : Successfully compared Id from API:24734   and provided during Registration: 24734
+2022-03-13 14:07:14,039 -Report_logger-[INFO] -Success : Successfully compared Name from API: tmhugjmyzvshbocapkq   and provided during Registration: tmhugjmyzvshbocapkq
+2022-03-13 14:07:14,039 -Report_logger-[INFO] -Success : Successfully compared Email id from API: Pasordtest02@gmail.comzvntcyblrmjyqcpxf  and provided during Registration: Pasordtest02@gmail.comzvntcyblrmjyqcpxf
+2022-03-13 14:07:14,055 -Report_logger-[INFO] -Success : Successfully logged in and  Verified ID, Name and Email id from API and provided during Registration 
+2022-03-13 14:07:14,055 -Report_logger-[INFO] -Completed Test Execution 
+2022-03-13 14:07:14,055 -Report_logger-[INFO] -.......................................................................
+2022-03-13 14:07:14,055 -Report_logger-[INFO] -Started Test Execution
+2022-03-13 14:07:14,070 -Report_logger-[INFO] -Test case Execution Started for test_003DependentOntest_001
+2022-03-13 14:07:14,070 -Report_logger-[INFO] -End point URL is :http://restapi.adequateshop.com/api/users/24734
+2022-03-13 14:07:14,070 -Report_logger-[INFO] -Header is :{'Content-type': 'application/json', 'Accept': '*/*', 'Authorization': 'Bearer eb9f0a91-a560-4858-9526-ec626dab27b6'}
+2022-03-13 14:07:14,070 -Report_logger-[INFO] -Post body is :{}
+2022-03-13 14:07:14,456 -Report_logger-[ERROR] -Failed: Response code from API is <Response [401]>
+2022-03-13 14:07:14,456 -Report_logger-[ERROR] -Failed: Not able to Hit API  and Response from APi :Inavlid Token
+2022-03-13 14:07:14,471 -Report_logger-[INFO] -Completed Test Execution 
+2022-03-13 14:07:14,471 -Report_logger-[INFO] -.......................................................................
