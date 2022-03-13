@@ -33,9 +33,6 @@ def get_random_string(length):
 def fn_Postrequest(testcasename, endpt):
     regobj, data = getdata(testcasename, endpt)
     url = baseURL + data[endpt]
-    if endpt == 'user_url':
-        headers['Authorization'] = 'Bearer ' + data['Token']
-        url = url + str(data['Id'])
     logg.info("End point URL is :%s" % url)
     logg.info("Header is :%s" % headers)
     logg.info("Post body is :%s" % regobj)
@@ -43,6 +40,19 @@ def fn_Postrequest(testcasename, endpt):
     # reponse=reponse.json()
     return reponse, regobj, data
 
+def fn_Getrequest(testcasename, endpt):
+    regobj, data = getdata(testcasename, endpt)
+    url = baseURL + data[endpt]
+    if endpt == 'user_url':
+        getheaders={}
+        getheaders['Authorization'] = 'Bearer ' + data['Token']
+        url = url + str(data['Id'])
+    logg.info("This is a Get Request")
+    logg.info("End point URL is :%s" % url)
+    logg.info("Header is :%s" % getheaders)
+    reponse = requests.get(url, headers=getheaders)
+    # reponse=reponse.json()
+    return reponse, regobj, data
 
 def verifyUserCreattion(testcasename):
     logg.info("Testcase name %s:" % testcasename)
@@ -81,7 +91,7 @@ def loginwiththeregistereduser(testcasename):
 def getUSerbyID(testcasename):
     logg.info("Test case Execution Started for %s" % testcasename)
     tccasename = funName(testcasename)
-    res, upobj, exclobj = fn_Postrequest(tccasename, 'user_url')
+    res, upobj, exclobj = fn_Getrequest(tccasename, 'user_url')
     if res.status_code == 200:
         logg.info("Success : Successfully Verified Response from API is %s" % res)
         if VerifydatainReponse(testcasename, res, exclobj):
@@ -96,7 +106,7 @@ def getUSerbyID(testcasename):
     else:
         logg.error("Failed: Response code from API is %s" % res)
         logg.error("Failed: Not able to Hit API  and Response from APi :%s" % res.json())
-        strmsg = "Failed: Not able to Hit API Response code is %s and  Response from APi %s" % (res,res.json())
+        strmsg = "Failed: Not able to Hit API Response code is %s and  Response from API is  %s" % (res,res.json())
         update_Result(testcasename, 'Failed', strmsg)
         #logg.error(strmsg)
 
