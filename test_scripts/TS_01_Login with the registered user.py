@@ -6,3 +6,5 @@ logging.info('So should this')
 logging.warning('And this, too')
 logging.warning('And this, too')
 logging.error('Testing non-ASCII character, Ø and ö')
+
+logging.warning('And this, too')
