@@ -10,7 +10,8 @@ logging.error('Testing non-ASCII character, Ø and ö')
 
 #Donelogging.info('So should this')
 logging.info('So should this')
-logging.info('So should this')logging.info('So should this')
+logging.info('So should this')
+logging.info('So should this')
 
 
 logging.warning('And this, too')
