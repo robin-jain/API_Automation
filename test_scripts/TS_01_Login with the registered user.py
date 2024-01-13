@@ -8,6 +8,7 @@ logging.info(' this is change from user A')
 logging.info(' this is change from user AAA')
 logging.info(' this is change from user AAA')
 logging.info(' this is change from user AAA')
+logging.info(' this is change from user Robin Local')
 
 logging.warning('And this, too')
 logging.error('Testing non-ASCII character, Ø and ö')
