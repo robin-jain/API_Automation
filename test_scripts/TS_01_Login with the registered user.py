@@ -21,6 +21,5 @@ logging.info('This commit from git hub')
 logging.info('This commit from git hub')
 
 
-
 logging.warning('And this, too')
 
